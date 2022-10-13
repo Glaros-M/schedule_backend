@@ -2,8 +2,8 @@ import json
 import models
 
 
-with open("rasp.json") as file:
-    datas: dict = json.load(file)
+with open("rasp2.json", encoding="utf8") as file:
+    datas = file.read()
 
 
 def get_faculties(data: dict) -> list[models.Faculties]:
@@ -18,6 +18,12 @@ def get_faculties(data: dict) -> list[models.Faculties]:
     return faculties
 
 
-def get_groups(data: dict) -> list[models.Groups]:
-    groups: list[models.Groups]
-    return groups
+def get_all(data: list[models.Faculties]):
+    print(data[0].groups)
+
+
+if __name__=="__main__":
+    a = models.JSON_Faculties.parse_raw(datas)
+    for fac in a:
+        print(fac)
+#    print(a)

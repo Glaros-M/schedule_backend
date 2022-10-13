@@ -1,271 +1,368 @@
-{"faculties" : [{
-    "faculty_name" : null,
-    "date_start" : null,
-    "date_end" : null,
-    "groups" : [{
-      "group_name" : "АС2-221-ОБ",
-      "course" : 1,
-      "days" : [{
-        "weekday" : 1,
-        "lessons" : [{
-          "subject" : "Физическая культура",
-          "type" : "",
-          "subgroup" : 0,
-          "time_start" : "10:10",
-          "time_end" : "11:40",
-          "time" : 2,
-          "week" : 7,
-          "date" : "10-10-2022",
-          "teachers" : [{
-            "teacher_name" : "ВакансияФиз-ра"
-          }],
-          "auditories" : [{
-            "auditory_name" : "сз /Гл"
-          }]
-        }, {
-          "subject" : "Химия",
-          "type" : "Лаб.",
-          "subgroup" : 1,
-          "time_start" : "11:50",
-          "time_end" : "13:20",
-          "time" : 3,
-          "week" : 7,
-          "date" : "10-10-2022",
-          "teachers" : [{
-            "teacher_name" : "Ходосова Н.А."
-          }],
-          "auditories" : [{
-            "auditory_name" : "106Лаб/Гл"
-          }]
-        }, {
-          "subject" : "Начертательная геометрия и инженерная графика",
-          "type" : "лаб.",
-          "subgroup" : 2,
-          "time_start" : "11:50",
-          "time_end" : "13:20",
-          "time" : 3,
-          "week" : 7,
-          "date" : "10-10-2022",
-          "teachers" : [{
-            "teacher_name" : "Князев А.В."
-          }],
-          "auditories" : [{
-            "auditory_name" : "221Пр/Гл"
-          }]
-        }, {
-          "subject" : "Химия",
-          "type" : "пр.",
-          "subgroup" : 0,
-          "time_start" : "13:40",
-          "time_end" : "15:10",
-          "time" : 4,
-          "week" : 7,
-          "date" : "10-10-2022",
-          "teachers" : [{
-            "teacher_name" : "Ходосова Н.А."
-          }],
-          "auditories" : [{
-            "auditory_name" : "12_Пр/Гл"
-          }]
-        }]
-      }, {
-        "weekday" : 2,
-        "lessons" : [{
-          "subject" : "Введение в профессиональную деятельность ",
-          "type" : "лек.",
-          "subgroup" : 0,
-          "time_start" : "08:30",
-          "time_end" : "10:00",
-          "time" : 1,
-          "week" : 7,
-          "date" : "11-10-2022",
-          "teachers" : [{
-            "teacher_name" : "Новиков А.П."
-          }],
-          "auditories" : [{
-            "auditory_name" : "314Л/Гл"
-          }]
-        }, {
-          "subject" : "Математика",
-          "type" : "лек.",
-          "subgroup" : 0,
-          "time_start" : "10:10",
-          "time_end" : "11:40",
-          "time" : 2,
-          "week" : 7,
-          "date" : "11-10-2022",
-          "teachers" : [{
-            "teacher_name" : "Сапронов И.В."
-          }],
-          "auditories" : [{
-            "auditory_name" : "311Лаб/Гл"
-          }]
-        }]
-      }, {
-        "weekday" : 3,
-        "lessons" : [{
-          "subject" : "Английский язык",
-          "type" : "Ин.яз.",
-          "subgroup" : 0,
-          "time_start" : "08:30",
-          "time_end" : "10:00",
-          "time" : 1,
-          "week" : 7,
-          "date" : "12-10-2022",
-          "teachers" : [{
-            "teacher_name" : "Илунина А.А."
-          }],
-          "auditories" : [{
-            "auditory_name" : "207аПр/7к"
-          }]
-        }, {
-          "subject" : "История",
-          "type" : "Лек.",
-          "subgroup" : 0,
-          "time_start" : "10:10",
-          "time_end" : "11:40",
-          "time" : 2,
-          "week" : 7,
-          "date" : "12-10-2022",
-          "teachers" : [{
-            "teacher_name" : "Чучупал В.В."
-          }],
-          "auditories" : [{
-            "auditory_name" : "322Л/Гл"
-          }]
-        }, {
-          "subject" : "История",
-          "type" : "Пр.",
-          "subgroup" : 0,
-          "time_start" : "11:50",
-          "time_end" : "13:20",
-          "time" : 3,
-          "week" : 7,
-          "date" : "12-10-2022",
-          "teachers" : [{
-            "teacher_name" : "Чучупал В.В."
-          }],
-          "auditories" : [{
-            "auditory_name" : "025Лаб/Гл"
-          }]
-        }]
-      }, {
-        "weekday" : 4,
-        "lessons" : [{
-          "subject" : "Введение в профессиональную деятельность ",
-          "type" : "пр.",
-          "subgroup" : 0,
-          "time_start" : "08:30",
-          "time_end" : "10:00",
-          "time" : 1,
-          "week" : 7,
-          "date" : "13-10-2022",
-          "teachers" : [{
-            "teacher_name" : "Новиков А.П."
-          }],
-          "auditories" : [{
-            "auditory_name" : "24Пр/Гл"
-          }]
-        }, {
-          "subject" : "Физическая культура",
-          "type" : "",
-          "subgroup" : 0,
-          "time_start" : "10:10",
-          "time_end" : "11:40",
-          "time" : 2,
-          "week" : 7,
-          "date" : "13-10-2022",
-          "teachers" : [{
-            "teacher_name" : "ВакансияФиз-ра"
-          }],
-          "auditories" : [{
-            "auditory_name" : "сз /Гл"
-          }]
-        }, {
-          "subject" : "Философия",
-          "type" : "пр.",
-          "subgroup" : 0,
-          "time_start" : "11:50",
-          "time_end" : "13:20",
-          "time" : 3,
-          "week" : 7,
-          "date" : "13-10-2022",
-          "teachers" : [{
-            "teacher_name" : "Дёгтева Я.Н."
-          }],
-          "auditories" : [{
-            "auditory_name" : "12_Пр/Гл"
-          }]
-        }]
-      }, {
-        "weekday" : 5,
-        "lessons" : [{
-          "subject" : "Начертательная геометрия и инженерная графика",
-          "type" : "пр.",
-          "subgroup" : 0,
-          "time_start" : "08:30",
-          "time_end" : "10:00",
-          "time" : 1,
-          "week" : 7,
-          "date" : "14-10-2022",
-          "teachers" : [{
-            "teacher_name" : "Князев А.В."
-          }],
-          "auditories" : [{
-            "auditory_name" : "222Л/Гл"
-          }]
-        }, {
-          "subject" : "Развитие и современное состояние мировой автомобилизации",
-          "type" : "лек.",
-          "subgroup" : 0,
-          "time_start" : "10:10",
-          "time_end" : "11:40",
-          "time" : 2,
-          "week" : 7,
-          "date" : "14-10-2022",
-          "teachers" : [{
-            "teacher_name" : "Климова Г.Н."
-          }],
-          "auditories" : [{
-            "auditory_name" : "234Л/Гл"
-          }]
-        }]
-      }, {
-        "weekday" : 6,
-        "lessons" : [{
-          "subject" : "Развитие и современное состояние мировой автомобилизации",
-          "type" : "пр.",
-          "subgroup" : 0,
-          "time_start" : "08:30",
-          "time_end" : "10:00",
-          "time" : 1,
-          "week" : 7,
-          "date" : "15-10-2022",
-          "teachers" : [{
-            "teacher_name" : "Климова Г.Н."
-          }],
-          "auditories" : [{
-            "auditory_name" : "5Пр/ОБД"
-          }]
-        }, {
-          "subject" : "Правила дорожного движения",
-          "type" : "пр.",
-          "subgroup" : 0,
-          "time_start" : "10:10",
-          "time_end" : "11:40",
-          "time" : 2,
-          "week" : 7,
-          "date" : "15-10-2022",
-          "teachers" : [{
-            "teacher_name" : "Хвастунов С.В."
-          }],
-          "auditories" : [{
-            "auditory_name" : "94Лаб/Гл"
-          }]
-        }]
-      }]
-    }
+{
+  "faculties": [
+    {
+      "faculty_name": null,
+      "date_start": null,
+      "date_end": null,
+      "groups": [
+        {
+          "group_name": "АС2-221-ОБ",
+          "course": 1,
+          "days": [
+            {
+              "weekday": 1,
+              "lessons": [
+                {
+                  "subject": "Физическая культура",
+                  "type": "",
+                  "subgroup": 0,
+                  "time_start": "10:10",
+                  "time_end": "11:40",
+                  "time": 2,
+                  "week": 7,
+                  "date": "10-10-2022",
+                  "teachers": [
+                    {
+                      "teacher_name": "ВакансияФиз-ра"
+                    }
+                  ],
+                  "auditories": [
+                    {
+                      "auditory_name": "сз /Гл"
+                    }
+                  ]
+                },
+                {
+                  "subject": "Химия",
+                  "type": "Лаб.",
+                  "subgroup": 1,
+                  "time_start": "11:50",
+                  "time_end": "13:20",
+                  "time": 3,
+                  "week": 7,
+                  "date": "10-10-2022",
+                  "teachers": [
+                    {
+                      "teacher_name": "Ходосова Н.А."
+                    }
+                  ],
+                  "auditories": [
+                    {
+                      "auditory_name": "106Лаб/Гл"
+                    }
+                  ]
+                },
+                {
+                  "subject": "Начертательная геометрия и инженерная графика",
+                  "type": "лаб.",
+                  "subgroup": 2,
+                  "time_start": "11:50",
+                  "time_end": "13:20",
+                  "time": 3,
+                  "week": 7,
+                  "date": "10-10-2022",
+                  "teachers": [
+                    {
+                      "teacher_name": "Князев А.В."
+                    }
+                  ],
+                  "auditories": [
+                    {
+                      "auditory_name": "221Пр/Гл"
+                    }
+                  ]
+                },
+                {
+                  "subject": "Химия",
+                  "type": "пр.",
+                  "subgroup": 0,
+                  "time_start": "13:40",
+                  "time_end": "15:10",
+                  "time": 4,
+                  "week": 7,
+                  "date": "10-10-2022",
+                  "teachers": [
+                    {
+                      "teacher_name": "Ходосова Н.А."
+                    }
+                  ],
+                  "auditories": [
+                    {
+                      "auditory_name": "12_Пр/Гл"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "weekday": 2,
+              "lessons": [
+                {
+                  "subject": "Введение в профессиональную деятельность ",
+                  "type": "лек.",
+                  "subgroup": 0,
+                  "time_start": "08:30",
+                  "time_end": "10:00",
+                  "time": 1,
+                  "week": 7,
+                  "date": "11-10-2022",
+                  "teachers": [
+                    {
+                      "teacher_name": "Новиков А.П."
+                    }
+                  ],
+                  "auditories": [
+                    {
+                      "auditory_name": "314Л/Гл"
+                    }
+                  ]
+                },
+                {
+                  "subject": "Математика",
+                  "type": "лек.",
+                  "subgroup": 0,
+                  "time_start": "10:10",
+                  "time_end": "11:40",
+                  "time": 2,
+                  "week": 7,
+                  "date": "11-10-2022",
+                  "teachers": [
+                    {
+                      "teacher_name": "Сапронов И.В."
+                    }
+                  ],
+                  "auditories": [
+                    {
+                      "auditory_name": "311Лаб/Гл"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "weekday": 3,
+              "lessons": [
+                {
+                  "subject": "Английский язык",
+                  "type": "Ин.яз.",
+                  "subgroup": 0,
+                  "time_start": "08:30",
+                  "time_end": "10:00",
+                  "time": 1,
+                  "week": 7,
+                  "date": "12-10-2022",
+                  "teachers": [
+                    {
+                      "teacher_name": "Илунина А.А."
+                    }
+                  ],
+                  "auditories": [
+                    {
+                      "auditory_name": "207аПр/7к"
+                    }
+                  ]
+                },
+                {
+                  "subject": "История",
+                  "type": "Лек.",
+                  "subgroup": 0,
+                  "time_start": "10:10",
+                  "time_end": "11:40",
+                  "time": 2,
+                  "week": 7,
+                  "date": "12-10-2022",
+                  "teachers": [
+                    {
+                      "teacher_name": "Чучупал В.В."
+                    }
+                  ],
+                  "auditories": [
+                    {
+                      "auditory_name": "322Л/Гл"
+                    }
+                  ]
+                },
+                {
+                  "subject": "История",
+                  "type": "Пр.",
+                  "subgroup": 0,
+                  "time_start": "11:50",
+                  "time_end": "13:20",
+                  "time": 3,
+                  "week": 7,
+                  "date": "12-10-2022",
+                  "teachers": [
+                    {
+                      "teacher_name": "Чучупал В.В."
+                    }
+                  ],
+                  "auditories": [
+                    {
+                      "auditory_name": "025Лаб/Гл"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "weekday": 4,
+              "lessons": [
+                {
+                  "subject": "Введение в профессиональную деятельность ",
+                  "type": "пр.",
+                  "subgroup": 0,
+                  "time_start": "08:30",
+                  "time_end": "10:00",
+                  "time": 1,
+                  "week": 7,
+                  "date": "13-10-2022",
+                  "teachers": [
+                    {
+                      "teacher_name": "Новиков А.П."
+                    }
+                  ],
+                  "auditories": [
+                    {
+                      "auditory_name": "24Пр/Гл"
+                    }
+                  ]
+                },
+                {
+                  "subject": "Физическая культура",
+                  "type": "",
+                  "subgroup": 0,
+                  "time_start": "10:10",
+                  "time_end": "11:40",
+                  "time": 2,
+                  "week": 7,
+                  "date": "13-10-2022",
+                  "teachers": [
+                    {
+                      "teacher_name": "ВакансияФиз-ра"
+                    }
+                  ],
+                  "auditories": [
+                    {
+                      "auditory_name": "сз /Гл"
+                    }
+                  ]
+                },
+                {
+                  "subject": "Философия",
+                  "type": "пр.",
+                  "subgroup": 0,
+                  "time_start": "11:50",
+                  "time_end": "13:20",
+                  "time": 3,
+                  "week": 7,
+                  "date": "13-10-2022",
+                  "teachers": [
+                    {
+                      "teacher_name": "Дёгтева Я.Н."
+                    }
+                  ],
+                  "auditories": [
+                    {
+                      "auditory_name": "12_Пр/Гл"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "weekday": 5,
+              "lessons": [
+                {
+                  "subject": "Начертательная геометрия и инженерная графика",
+                  "type": "пр.",
+                  "subgroup": 0,
+                  "time_start": "08:30",
+                  "time_end": "10:00",
+                  "time": 1,
+                  "week": 7,
+                  "date": "14-10-2022",
+                  "teachers": [
+                    {
+                      "teacher_name": "Князев А.В."
+                    }
+                  ],
+                  "auditories": [
+                    {
+                      "auditory_name": "222Л/Гл"
+                    }
+                  ]
+                },
+                {
+                  "subject": "Развитие и современное состояние мировой автомобилизации",
+                  "type": "лек.",
+                  "subgroup": 0,
+                  "time_start": "10:10",
+                  "time_end": "11:40",
+                  "time": 2,
+                  "week": 7,
+                  "date": "14-10-2022",
+                  "teachers": [
+                    {
+                      "teacher_name": "Климова Г.Н."
+                    }
+                  ],
+                  "auditories": [
+                    {
+                      "auditory_name": "234Л/Гл"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "weekday": 6,
+              "lessons": [
+                {
+                  "subject": "Развитие и современное состояние мировой автомобилизации",
+                  "type": "пр.",
+                  "subgroup": 0,
+                  "time_start": "08:30",
+                  "time_end": "10:00",
+                  "time": 1,
+                  "week": 7,
+                  "date": "15-10-2022",
+                  "teachers": [
+                    {
+                      "teacher_name": "Климова Г.Н."
+                    }
+                  ],
+                  "auditories": [
+                    {
+                      "auditory_name": "5Пр/ОБД"
+                    }
+                  ]
+                },
+                {
+                  "subject": "Правила дорожного движения",
+                  "type": "пр.",
+                  "subgroup": 0,
+                  "time_start": "10:10",
+                  "time_end": "11:40",
+                  "time": 2,
+                  "week": 7,
+                  "date": "15-10-2022",
+                  "teachers": [
+                    {
+                      "teacher_name": "Хвастунов С.В."
+                    }
+                  ],
+                  "auditories": [
+                    {
+                      "auditory_name": "94Лаб/Гл"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       ]
-}]
-  }
+    }
+  ]
+}
 
