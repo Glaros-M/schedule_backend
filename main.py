@@ -2,7 +2,7 @@ import json
 import models
 
 
-with open("rasp2.json", encoding="utf8") as file:
+with open("rasp.json", encoding="utf8") as file:
     datas = file.read()
 
 
@@ -24,6 +24,6 @@ def get_all(data: list[models.Faculties]):
 
 if __name__=="__main__":
     a = models.JSON_Faculties.parse_raw(datas)
-    for fac in a:
-        print(fac)
+    print(a)
+
 #    print(a)
