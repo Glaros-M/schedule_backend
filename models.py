@@ -17,11 +17,12 @@ class JSON_Faculties(BaseModel):
 
 
 class Faculties(BaseModel):
-    #id: int | None
+
     faculty_name: str | None
     date_start: str | None #| datetime.date
     date_end: str | None #| datetime.date
     groups: list["Groups"] #| None
+    id: int | None = None
 
     def __repr__(self):
         s = f" {self.faculty_name=}\n"
@@ -48,19 +49,26 @@ class Groups(BaseModel):
     def __str__(self):
         return self.__repr__()
 
+
 class Days(BaseModel):
     #id: int
     weekday: int
-    lessons: list["Lessons"]
+    lessons: list["Lessons"] | None = None
     
     def __repr__(self):
+
         s = f"{self.weekday}\n"
-        for lesson in self.lessons:
-            s += "\t\t\t" + str(lesson) + "\n"
+        if self.lessons:
+            for lesson in self.lessons:
+                s += "\t\t\t" + str(lesson) + "\n"
+        else:
+            s += "\t\t\tNo lessons"
         return s
+
 
     def __str__(self):
         return self.__repr__()
+
 
 class Lessons(BaseModel):
     #id: int
@@ -86,6 +94,7 @@ class Lessons(BaseModel):
     def __str__(self):
         return self.__repr__()
 
+
 class Teachers(BaseModel):
     #id: int
     teacher_name: str # "Вакансия" или "Фамилия И.О."
@@ -95,6 +104,7 @@ class Teachers(BaseModel):
 
     def __str__(self):
         return self.__repr__()
+
 
 class Auditories(BaseModel):
     #id: int
