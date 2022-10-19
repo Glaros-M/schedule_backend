@@ -49,6 +49,7 @@ class Groups(BaseModel):
     def __str__(self):
         return self.__repr__()
 
+
 class Days(BaseModel):
     #id: int
     weekday: int
@@ -67,6 +68,7 @@ class Days(BaseModel):
 
     def __str__(self):
         return self.__repr__()
+
 
 class Lessons(BaseModel):
     #id: int
@@ -92,6 +94,7 @@ class Lessons(BaseModel):
     def __str__(self):
         return self.__repr__()
 
+
 class Teachers(BaseModel):
     #id: int
     teacher_name: str # "Вакансия" или "Фамилия И.О."
@@ -101,6 +104,7 @@ class Teachers(BaseModel):
 
     def __str__(self):
         return self.__repr__()
+
 
 class Auditories(BaseModel):
     #id: int

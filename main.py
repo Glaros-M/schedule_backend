@@ -2,28 +2,37 @@ import json
 import models
 
 
-with open("rasp.json", encoding="utf8") as file:
-    datas = file.read()
+def get_data_from_file(path: str) -> models.JSON_Faculties:
+    with open(path, encoding="utf8") as file:
+        data = file.read()
+    a = models.JSON_Faculties.parse_raw(data)
+    return a
 
 
-def get_faculties(data: dict) -> list[models.Faculties]:
-    faculties = []
-    for i in range(len(data["faculties"])):
-        faculties.append(models.Faculties(id=i,
-                                faculty_name=data["faculties"][i]["faculty_name"],
-                                date_start=data["faculties"][i]["date_start"],
-                                date_end=data["faculties"][i]["date_end"],
-                                groups=None
-                                ))
-    return faculties
+def search_by_group_name(group_name: str, all_files: list[models.JSON_Faculties]) -> models.Groups | None:
+    for faculties in all_files:
+        for facultie in faculties.faculties:
+            for group in facultie.groups:
+                if group.group_name == group_name:
+                    print(group)
+                    return group
+                else:
+                    #raise Exception
+                    print("404 Not Found")
+                    return None
 
 
-def get_all(data: list[models.Faculties]):
-    print(data[0].groups)
-
+def get_group_names_list(all_files: list[models.JSON_Faculties]) -> list[str]:
+    result = []
+    for faculties in all_files:
+        for facultie in faculties.faculties:
+            for group in facultie.groups:
+                result.append(group.group_name)
+    return result
 
 if __name__=="__main__":
-    a = models.JSON_Faculties.parse_raw(datas)
-    print(a)
-
-#    print(a)
+    data = get_data_from_file("rasp.json")
+    search_by_group_name('', [data])
+    #for name in get_group_names_list([data]):
+    #    print(name)
+    #print(get_group_names_list([data]))
