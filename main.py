@@ -1,9 +1,8 @@
 import json
 import models
-import sys
 
 
-with open("rasp.json", encoding="utf8") as file:
+with open("rasp2.json", encoding="utf8") as file:
     datas = file.read()
 
 
@@ -27,5 +26,4 @@ if __name__=="__main__":
     a = models.JSON_Faculties.parse_raw(datas)
     for fac in a:
         print(fac)
-        print(sys.getsizeof(fac))
 #    print(a)
