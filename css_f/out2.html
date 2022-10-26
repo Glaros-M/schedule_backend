@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Расписание</title>
+</head>
+<body>
+<table border="1" width="700px">
+    {% for day in week_lessons %}
+
+    <tr><td class="day" colspan="3" align="center">{{day.weekday}}   {{day.date}}</td></tr>
+    {% for row in day.lessons %}
+    <tr>
+        <td class="time" rowspan="{{row.rows}}">{{row.time_start}} - {{row.time_end}}</td>
+        {% set lesson = row.lessons[0] %}
+        <td class="object" ><span>{{lesson.type}} {{lesson.subject}}
+            {% if lesson.subgroup > 0 %}
+                {{lesson.subgroup}} п/г
+            {% endif %}</span>
+            </br>
+            {{lesson.teachers}} {{lesson.auditories}}
+
+        </td>
+    </tr>
+    {% if row.rows > 1 %}
+    {% for lesson in row.lessons[1:] %}
+    <tr>
+        <td class="object"><span>{{lesson.type}} {{lesson.subject}}
+            {% if lesson.subgroup > 0 %}
+                {{lesson.subgroup}} п/г
+            {% endif %}</span>
+            </br>
+            {{lesson.teachers}} {{lesson.auditories}}
+
+        </td>
+    </tr>
+
+    {% endfor %}
+    {% endif %}
+
+    {% endfor %}
+
+{% endfor %}
+    </table>
+</body>
+</html>
