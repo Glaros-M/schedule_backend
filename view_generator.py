@@ -3,11 +3,9 @@ from jinja2 import Environment, PackageLoader, select_autoescape, FileSystemLoad
 from typing import NamedTuple
 
 env = Environment(
-    loader=FileSystemLoader('./templates')#,
-    #autoescape=select_autoescape(['html', 'xml'])
+    loader=FileSystemLoader('./templates')  # ,
+    # autoescape=select_autoescape(['html', 'xml'])
 )
-
-
 
 
 def get_data_from_file(path: str) -> models.JSON_Faculties:
@@ -17,6 +15,31 @@ def get_data_from_file(path: str) -> models.JSON_Faculties:
     a = models.JSON_Faculties.parse_raw(data)
     return a
 
+
+DAYS_OF_WEEK = {
+    1: "Пн.",
+    2: "Вт.",
+    3: "Ср.",
+    4: "Чт.",
+    5: "Пт.",
+    6: "Сб.",
+    7: "Вс."
+}
+
+
+class Day(NamedTuple):
+    group_name: str
+    weekday: str
+    date: str
+    lessons: list["LessonRow"]
+
+    @property
+    def rows(self):
+        i=1
+        for lesson in self.lessons:
+            for _ in lesson.lessons:
+                i+=1
+        return i
 
 class LessonRow(NamedTuple):
     time: int
@@ -82,35 +105,36 @@ def _get_lessons_from_day(day: models.Days) -> list[LessonRow]:
     return lesson_list
 
 
-def convert_group_to_lessons(group: models.Groups) -> list[list[LessonRow]]:
+def convert_group_to_lessons(group: models.Groups) -> list[Day]:
     group_name = group.group_name
-    days_lessons_list = []
+    day_lessons_list = []
     for day in group.days:
         weekday = day.weekday
         date = day.lessons[0].date
-        days_lessons_list.append(_get_lessons_from_day(day))
-
-    return days_lessons_list
+        new_day = Day(
+            group_name=group_name,
+            weekday=DAYS_OF_WEEK.get(weekday),
+            date=date,
+            lessons=_get_lessons_from_day(day)
+        )
+        day_lessons_list.append(new_day)
+    return day_lessons_list
 
 
 if __name__ == "__main__":
     data = get_data_from_file("rasp2.json")
     week_lessons = convert_group_to_lessons(data.faculties[0].groups[0])
-    """for day in week_lessons:
+    for day in week_lessons:
         print(day)
-        for row in day:
-            print("\t", row.time, row.rows)
-            for lesson_row in row.lessons:
-                print("\t\t", lesson_row)"""
+        for row in day.lessons:
+            print("\t", row)
     # print(week_lessons[0][1].lessons)
-    #print(week_lessons[0][1].time, week_lessons[0][1].time_start, week_lessons[0][1].time_end, week_lessons[0][1].rows)
-    #for l in week_lessons[0][1].lessons:
+    # print(week_lessons[0][1].time, week_lessons[0][1].time_start, week_lessons[0][1].time_end, week_lessons[0][1].rows)
+    # for l in week_lessons[0][1].lessons:
     #    print(l)
 
-
-
-    template = env.get_template('table_template.html')
+    template = env.get_template('table_template2.html')
     print(template.render(week_lessons=week_lessons))
-    f = open("out.html", 'w')
+    f = open("out2.html", 'w')
     f.write(template.render(week_lessons=week_lessons))
     f.close()

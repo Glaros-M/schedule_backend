@@ -8,7 +8,7 @@
 <table border="1" width="700px">
     {% for day in week_lessons %}
 
-    <tr><td rowspan="{{day.rows}}">{{day.weekday}}   {{day.date}}</td></tr>
+    <tr><td colspan="3" align="center">{{day.weekday}}   {{day.date}}</td></tr>
     {% for row in day.lessons %}
     <tr>
         <td rowspan="{{row.rows}}">{{row.time_start}} - {{row.time_end}}</td>
