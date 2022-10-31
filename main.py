@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, make_response
 from view_generator import get_table_by_group_name
 from models import get_data_from_file, get_group_names_list
 from flask import request
@@ -15,7 +15,9 @@ ALL_FACULTIES = [get_data_from_file(INPUT_FILE)]
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    resp = make_response("hello world")
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    return resp
 
 
 @app.get("/groups")
@@ -38,6 +40,13 @@ def get_schedule_by_group_name() -> str:  # Возвращается шабло�
         group_name = "ОП2-221-ОБ"
     out = get_table_by_group_name(group_name=group_name, list_faculties=ALL_FACULTIES)
     return out
+
+
+@app.after_request
+def apply_caching(response):
+    response = make_response(response)
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
 
 
 if __name__ == "__main__":
