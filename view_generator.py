@@ -35,7 +35,7 @@ class Day(NamedTuple):
 
     @property
     def rows(self):
-        i=1
+        i=0
         for lesson in self.lessons:
             for _ in lesson.lessons:
                 i+=1
@@ -133,8 +133,8 @@ if __name__ == "__main__":
     # for l in week_lessons[0][1].lessons:
     #    print(l)
 
-    template = env.get_template('table_template2.html')
+    template = env.get_template('table_template.html')
     print(template.render(week_lessons=week_lessons))
-    f = open("out2.html", 'w')
+    f = open("out.html", 'w')
     f.write(template.render(week_lessons=week_lessons))
     f.close()

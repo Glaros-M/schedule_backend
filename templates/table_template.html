@@ -7,40 +7,42 @@
 <body>
 <table border="1" width="700px">
     {% for day in week_lessons %}
-
-    <tr><td rowspan="{{day.rows}}">{{day.weekday}}   {{day.date}}</td></tr>
-    {% for row in day.lessons %}
-    <tr>
-        <td rowspan="{{row.rows}}">{{row.time_start}} - {{row.time_end}}</td>
-        {% set lesson = row.lessons[0] %}
-        <td>{{lesson.type}} {{lesson.subject}}
+        <!-- for day in week_lessons -->
+        <tr><td rowspan="{{day.rows}}">{{day.weekday}}   {{day.date}}</td>
+        {% for row in day.lessons %}
+            <td rowspan="{{row.rows}}">{{row.time_start}} - {{row.time_end}}</td>
+            <!-- Создано при содействии первой хуйни-->
+            {% set lesson = row.lessons[0] %}
+            <td>{{lesson.type}} {{lesson.subject}}
             {% if lesson.subgroup > 0 %}
                 {{lesson.subgroup}} п/г
             {% endif %}
-            </br>
+            <p>
             {{lesson.teachers}} {{lesson.auditories}}
+            </p>
+            </td>
+            </tr>
 
-        </td>
-    </tr>
-    {% if row.rows > 1 %}
-    {% for lesson in row.lessons[1:] %}
-    <tr>
-        <td>{{lesson.type}} {{lesson.subject}}
-            {% if lesson.subgroup > 0 %}
-                {{lesson.subgroup}} п/г
+            {% if row.rows > 1 %}
+                {% for lesson in row.lessons[1:] %}
+                    <!-- Создано при содействии if row rows >1-->
+                    <tr>
+                    <td>{{lesson.type}} {{lesson.subject}}
+                    {% if lesson.subgroup > 0 %}
+                        {{lesson.subgroup}} п/г
+                    {% endif %}
+                    <p>
+                    {{lesson.teachers}} {{lesson.auditories}}
+                    </p>
+                    </td>
+                    </tr>
+
+                {% endfor %}
             {% endif %}
-            </br>
-            {{lesson.teachers}} {{lesson.auditories}}
 
-        </td>
-    </tr>
+        {% endfor %}
 
     {% endfor %}
-    {% endif %}
-
-    {% endfor %}
-
-{% endfor %}
     </table>
 </body>
 </html>
