@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Расписание</title>
-</head>
-<body>
-<table border="1" width="700px">
+
+<table>
     {% for day in week_lessons %}
     {% set ns = namespace(NotFirst=false) %}
         <tr><td rowspan="{{day.rows}}">{{day.weekday}}   {{day.date}}</td>
@@ -48,5 +42,3 @@
 
     {% endfor %}
     </table>
-</body>
-</html>

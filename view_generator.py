@@ -1,15 +1,19 @@
 import models
-from jinja2 import Environment, PackageLoader, select_autoescape, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader
 from typing import NamedTuple
 
+""" 
+Генерация представлений из данных. Необходимо прописать функцию для вызова - зависит от того как будет
+                                                                                происходить вызов из API.
+"""
+
 env = Environment(
-    loader=FileSystemLoader('./templates')  # ,
-    # autoescape=select_autoescape(['html', 'xml'])
+    loader=FileSystemLoader('./templates')
 )
 
 
 def get_data_from_file(path: str) -> models.JSON_Faculties:
-    # Удалить отсюда после отладки!!!
+    # Удалить отсюда после отладки!!! Тоже почистить после подключения
     with open(path, encoding="utf8") as file:
         data = file.read()
     a = models.JSON_Faculties.parse_raw(data)
@@ -61,6 +65,8 @@ class LessonCell(NamedTuple):
 
 
 def _get_teachers_auditories_from_lesson(lesson: models.Lessons) -> (str, str):
+    """Преобразование списков с учителями и аудиториями к строкам. Возможно добавить запятые?"""
+
     teachers_str = ""
     for teacher in lesson.teachers:
         teachers_str += teacher.teacher_name
@@ -72,6 +78,8 @@ def _get_teachers_auditories_from_lesson(lesson: models.Lessons) -> (str, str):
 
 
 def _get_lessons_from_day(day: models.Days) -> list[LessonRow]:
+    """Преобразует данные об уроках из models.Days в класс LessonRow, в котором объединяются пары,
+     проходящие в одно время, для создания объединенных (rowspan) ячеек в представлении"""
     lesson_list: list[LessonRow] = []
     for lesson in day.lessons:
         teachers_str, auditories_str = _get_teachers_auditories_from_lesson(lesson)
@@ -106,6 +114,10 @@ def _get_lessons_from_day(day: models.Days) -> list[LessonRow]:
 
 
 def convert_group_to_lessons(group: models.Groups) -> list[Day]:
+    """Форматирует данные группы в список дней с занятиями этой группы для отображения в представлении
+    Тут же подствляется сокращение дня недели вместо номера.
+    """
+
     group_name = group.group_name
     day_lessons_list = []
     for day in group.days:
@@ -128,10 +140,6 @@ if __name__ == "__main__":
         print(day)
         for row in day.lessons:
             print("\t", row)
-    # print(week_lessons[0][1].lessons)
-    # print(week_lessons[0][1].time, week_lessons[0][1].time_start, week_lessons[0][1].time_end, week_lessons[0][1].rows)
-    # for l in week_lessons[0][1].lessons:
-    #    print(l)
 
     template = env.get_template('table_template.html')
     print(template.render(week_lessons=week_lessons))
