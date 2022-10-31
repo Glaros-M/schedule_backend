@@ -12,11 +12,11 @@ env = Environment(
 )
 
 
-def get_data_from_file(path: str) -> models.JSON_Faculties:
+def get_data_from_file(path: str) -> models.JsonFaculties:
     # Удалить отсюда после отладки!!! Тоже почистить после подключения
     with open(path, encoding="utf8") as file:
         data = file.read()
-    a = models.JSON_Faculties.parse_raw(data)
+    a = models.JsonFaculties.parse_raw(data)
     return a
 
 
@@ -133,16 +133,24 @@ def convert_group_to_lessons(group: models.Groups) -> list[Day]:
     return day_lessons_list
 
 
+def get_table_by_group_name(group_name: str, list_faculties: list[models.JsonFaculties]) -> str:
+    group = models.search_by_group_name(group_name=group_name, all_files=list_faculties)
+    if group:
+        return _render_table_by_group(group=group)
+
+
+def _render_table_by_group(group: models.Groups) -> str:
+    lessons = convert_group_to_lessons(group)
+    template = env.get_template('group_table_template.html')
+    return template.render(week_lessons=lessons)
+
+
+
+
+
+
 if __name__ == "__main__":
     data = get_data_from_file("rasp2.json")
-    week_lessons = convert_group_to_lessons(data.faculties[0].groups[0])
-    for day in week_lessons:
-        print(day)
-        for row in day.lessons:
-            print("\t", row)
 
-    template = env.get_template('table_template.html')
-    print(template.render(week_lessons=week_lessons))
-    f = open("out.html", 'w')
-    f.write(template.render(week_lessons=week_lessons))
-    f.close()
+    a = get_table_by_group_name("ИС2-222-ОБ", [data])
+    print(a)
