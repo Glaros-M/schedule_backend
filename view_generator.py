@@ -35,11 +35,11 @@ class Day(NamedTuple):
 
     @property
     def rows(self):
-        i=0
+        i = 0
         for lesson in self.lessons:
-            for _ in lesson.lessons:
-                i+=1
+            i += len(lesson.lessons)
         return i
+
 
 class LessonRow(NamedTuple):
     time: int

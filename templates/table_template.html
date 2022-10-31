@@ -7,10 +7,14 @@
 <body>
 <table border="1" width="700px">
     {% for day in week_lessons %}
-        <!-- for day in week_lessons -->
+    {% set ns = namespace(NotFirst=false) %}
         <tr><td rowspan="{{day.rows}}">{{day.weekday}}   {{day.date}}</td>
         {% for row in day.lessons %}
+            {% if ns.NotFirst %}
+                <tr>
+            {% endif %}
             <td rowspan="{{row.rows}}">{{row.time_start}} - {{row.time_end}}</td>
+            {% set ns.NotFirst = true %}
             <!-- Создано при содействии первой хуйни-->
             {% set lesson = row.lessons[0] %}
             <td>{{lesson.type}} {{lesson.subject}}
@@ -25,17 +29,17 @@
 
             {% if row.rows > 1 %}
                 {% for lesson in row.lessons[1:] %}
-                    <!-- Создано при содействии if row rows >1-->
-                    <tr>
-                    <td>{{lesson.type}} {{lesson.subject}}
-                    {% if lesson.subgroup > 0 %}
-                        {{lesson.subgroup}} п/г
-                    {% endif %}
-                    <p>
-                    {{lesson.teachers}} {{lesson.auditories}}
-                    </p>
-                    </td>
-                    </tr>
+                <!-- Создано при содействии if row rows >1-->
+                <tr>
+                <td>{{lesson.type}} {{lesson.subject}}
+                {% if lesson.subgroup > 0 %}
+                    {{lesson.subgroup}} п/г
+                {% endif %}
+                <p>
+                {{lesson.teachers}} {{lesson.auditories}}
+                </p>
+                </td>
+                </tr>
 
                 {% endfor %}
             {% endif %}
