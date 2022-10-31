@@ -123,3 +123,35 @@ Days.update_forward_refs()
 Groups.update_forward_refs()
 Faculties.update_forward_refs()
 JSON_Faculties.update_forward_refs()
+
+
+"""Блок функций. Не уверен что ему место тут, но пока пускай лежит"""
+
+
+def get_data_from_file(path: str) -> JSON_Faculties:
+    with open(path, encoding="utf8") as file:
+        data = file.read()
+    facultie = JSON_Faculties.parse_raw(data)
+    return facultie
+
+
+def search_by_group_name(group_name: str, all_files: list[JSON_Faculties]) -> Groups | None:
+    for faculties in all_files:
+        for facultie in faculties.faculties:
+            for group in facultie.groups:
+                if group.group_name == group_name:
+                    print(group)
+                    return group
+                else:
+                    # raise Exception
+                    print("404 Not Found")
+                    return None
+
+
+def get_group_names_list(all_files: list[JSON_Faculties]) -> list[str]:
+    groups = []
+    for faculties in all_files:
+        for facultie in faculties.faculties:
+            for group in facultie.groups:
+                groups.append(group.group_name)
+    return groups
